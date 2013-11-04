@@ -6,11 +6,24 @@ class webb::python-settings(
   	$project_name	    = $webb::params::project_name,
 ) inherits webb::params {
 
+	package { "python-software-properties":
+		ensure	=> "present"
+	}
+
+	exec { "add-python-repo":
+		path 		=> $system_paths,
+		command 	=> "add-apt-repository ppa:fkrull/deadsnakes",
+		require		=> [ Exec["apt-update"], Package["python-software-properties"] ],
+		logoutput 	=> on_failure,
+	}
+
+
 	# Install python and pip
 	class { "python":
-	  version    => "system",
-	  dev        => true,
-	  pip 		 => true,
+	  version   => "3.3",
+	  dev       => true,
+	  pip 		=> true,
+	  require	=> Exec["add-python-repo"],
 	}
 
 	# Install virtualenvwrapper
@@ -30,8 +43,10 @@ class webb::python-settings(
 	
 	# Set ensure that current directory is available
 	file { "/home/vagrant/envs":
-		ensure 	=> directory,
-		require => [ Exec["install-virtualenvwrapper"] ],
+		ensure 		=> directory,
+		owner		=> $user,
+		group		=> $user_group,
+		require 	=> [ Exec["install-virtualenvwrapper"] ],
 	}
 
 

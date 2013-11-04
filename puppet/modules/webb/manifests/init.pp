@@ -9,6 +9,9 @@ class webb(
 	# Include git
 	class { "webb::git-settings": }
 
+	# Include grunt
+	#class { "webb::grunt-settings": }
+
 	# Include nginx
 	# class { "webb::nginx-settings": }
 
