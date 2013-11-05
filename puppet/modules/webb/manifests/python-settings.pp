@@ -6,24 +6,12 @@ class webb::python-settings(
   	$project_name	    = $webb::params::project_name,
 ) inherits webb::params {
 
-	package { "python-software-properties":
-		ensure	=> "present"
-	}
-
-	exec { "add-python-repo":
-		path 		=> $system_paths,
-		command 	=> "add-apt-repository ppa:fkrull/deadsnakes",
-		require		=> [ Exec["apt-update"], Package["python-software-properties"] ],
-		logoutput 	=> on_failure,
-	}
-
-
 	# Install python and pip
 	class { "python":
-	  version   => "3.3",
+	  version   => "system",
 	  dev       => true,
 	  pip 		=> true,
-	  require	=> Exec["add-python-repo"],
+	  require	=> Exec["apt-update"],
 	}
 
 	# Install virtualenvwrapper

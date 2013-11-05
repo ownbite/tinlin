@@ -8,6 +8,12 @@ class webb::git-settings(
   	$project_base_path	= $webb::params::project_base_path,
 ) inherits webb::params {
 
+	# Install git
+	package { "git":
+		ensure  	=> "present",
+		require  	=> Exec["apt-update"],
+	}
+
 	# Configure Git
 	exec { "git-author-name":
 		path 		=> $system_paths,
