@@ -37,5 +37,10 @@ class webb::python-settings(
 		require 	=> [ Exec["install-virtualenvwrapper"] ],
 	}
 
+	# add source path to bashrc
+	file { "/etc/bash.bashrc":
+        content => inline_template("source /usr/local/bin/virtualenvwrapper.sh"),
+        require => [ Exec["install-virtualenvwrapper"] ],
+    }
 
 }
