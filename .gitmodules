@@ -1,3 +1,0 @@
-[submodule "tinlin/templates/bootstrap"]
-	path = tinlin/templates/bootstrap
-	url = https://github.com/twbs/bootstrap.git
