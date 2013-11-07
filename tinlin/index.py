@@ -2,12 +2,21 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return "asd"
+
+	navigation = [ { 'href' : '/', 'caption': 'Hem' }, { 'href' : '/yolo', 'caption': 'yolo' } ]
+	a_variable = "this is it NOW"
+
+	return render_template('startpage.html', 
+								navigation=navigation, 
+								a_variable=a_variable)
+
+
+
 
 @app.route('/hello/')
-@app.route("/hello/<name>")
+@app.route('/hello/<name>')
 def hello(name=None):
     return render_template('hello.html', name=name)
 
@@ -21,5 +30,5 @@ def show_post(post_id):
     # show the post with the given id, the id is an integer
     return 'Post %d' % post_id
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=80, debug=True)
