@@ -1,16 +1,19 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
 
+	css_file = url_for('static', filename='bootstrap.min.css')
+
 	navigation = [ { 'href' : '/', 'caption': 'Hem' }, { 'href' : '/yolo', 'caption': 'yolo' } ]
 	a_variable = "this is it NOW"
 
 	return render_template('startpage.html', 
 								navigation=navigation, 
-								a_variable=a_variable)
+								a_variable=a_variable,
+								css_file=css_file)
 
 
 

@@ -1,11 +1,75 @@
+
 {% extends "base.html" %}
 
-{% block title %}Index{% endblock %}
-
-
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-      Welcome on my awesome homepage.
-    </p>
+
+<div class="row-fluid">
+
+        
+
+        <form action="/addbill" method="post" class="span12">
+                
+                
+                
+                <input type="text" name="money" value="" placeholder="Summa" class="input-block-level" />
+                <input type="hidden" name="group" value="" />
+
+                <div class="row-fluid">
+
+                        <select name="category" class="btn-block span8">
+                                
+                        </select>
+
+                        <button type="button" class="btn btn-danger span3 pull-right" data-toggle="collapse" data-target="#alternativ">
+                                Extra information
+                        </button>
+
+                </div>
+
+        
+                <p>
+                        <div id="alternativ" class="collapse-alt in" style="position: relative; overflow: hidden; height: 1px;">
+                                <input type="text" name="desc" value="" placeholder="Beskrivning" class="input-block-level" />
+                                <input type="text" id="demo" placeholder="Datum (Standard {{now_date}})" name="date" value="" class="input-block-level" /> 
+                        </div>
+                                        
+                </p>
+                
+                <h5>Vilka ska dela på pengarna</h5>
+                
+               
+                <label class="checkbox inline">
+                        <input type="checkbox" checked="checked" name="users" id="inlineCheckbox1" value="" />
+                        </label>
+                
+
+                <br />
+                <br />
+
+                <input type="submit" value="Lägg till" class="btn btn-primary btn-large btn-block" />
+        </form>
+
+</div>
+
+<div class="row-fluid">
+        <h1>Kalkyl</h1>
+
+        <table class="table" style="text-align: left;">
+                <tr>
+                        <th width="100" >Namn</th>
+                        <th width="100" >Summa</th>
+                </tr>
+               
+
+                <tr>
+                        <td> </td>
+                        <td>   kr </td>
+                </tr>
+
+                
+
+        </table>
+
+</div>
+
 {% endblock %}
