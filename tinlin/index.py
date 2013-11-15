@@ -5,15 +5,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-	css_file = url_for('static', filename='bootstrap.min.css')
+	css_file = url_for('static', filename='css/bootstrap.min.css')
+	js_angular_ctrl = url_for('static', filename='js/angular.ctrl.js')
 
 	navigation = [ { 'href' : '/', 'caption': 'Hem' }, { 'href' : '/yolo', 'caption': 'yolo' } ]
-	a_variable = "this is it NOW"
 
 	return render_template('startpage.html', 
 								navigation=navigation, 
-								a_variable=a_variable,
-								css_file=css_file)
+								css_file=css_file,
+								js_angular_ctrl=js_angular_ctrl)
 
 
 

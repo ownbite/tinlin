@@ -1,17 +1,30 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-    {% block head %}
-    <link rel="stylesheet" href="{{ css_file }}" />
-    <title>{% block title %}{% endblock %} - Billbalance</title>
-    {% endblock %}
+        {% block head %} 
+        <title>
+                {% block title %}{% endblock %} - Tinlin
+        </title>
+        <link rel="stylesheet" href="{{ css_file }}" type="text/css">
+
+        {% block style %}{% endblock %}
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% endblock %}
 </head>
 <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-        &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
-        {% endblock %}
-    </div>
+        <div class="header">
+                {% block header %}
+
+                {% endblock %}
+        </div>
+        <div class="content">
+                {% block content %}{% endblock %}
+        </div>
+        <div class="footer">
+                {% block footer %} <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js">
+                </script> <script type="text/javascript" src="{{ js_angular_ctrl }}">
+        </script> {% endblock %}
+</div>
 </body>
 </html>
