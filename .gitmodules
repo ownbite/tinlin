@@ -1,3 +1,3 @@
 [submodule "tinlin/static/bootstrap"]
 	path = tinlin/static/bootstrap
-	url = https://github.com/twbs/bootstrap.git
+	url = https://github.com/ownbite/bootstrap.git
