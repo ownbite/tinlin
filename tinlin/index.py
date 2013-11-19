@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
 
 	css_file = url_for('static', filename='css/bootstrap.min.css')
-	js_angular_ctrl = url_for('static', filename='js/angular.ctrl.js')
+	js_angular_ctrl = url_for('static', filename='bootstrap/assets/js/angular.ctrl.js')
 
 	navigation = [ { 'href' : '/', 'caption': 'Hem' }, { 'href' : '/yolo', 'caption': 'yolo' } ]
 

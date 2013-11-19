@@ -7,63 +7,114 @@
 <div class="container">
 
 
-    <div class="row"> 
-        <div class="col-md-12 well">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Sum">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <select class="form-control input-lg">
-                            <option>Mat</option>
-                            <option>Bostad</option>
-                            <option>Medecin</option>
-                            <option>Presenter</option>
-                            <option>Övrigt</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-4">
-                        <button type="submit" class="btn btn-block btn-primary btn-lg">Add bill</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>    
+	<div class="row"> 
+		<div class="col-md-12 well">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="col-md-12">
+						<input type="text" class="form-control input-lg" id="inputEmail3" placeholder="Sum">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12">
+						<select class="form-control input-lg">
+							<option>Mat</option>
+							<option>Bostad</option>
+							<option>Medecin</option>
+							<option>Presenter</option>
+							<option>Övrigt</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-3">                    
+						<h3 style="margin:10px 0;">Who will share the bill:</h3>
+
+					</div>
+
+					<div class="col-md-5">
+
+						<ul class="nav nav-pills bill-share">
+							<li class="active">
+								<a href="#" class="bill-share-person">Linus</a>
+							</li>
+							<li class="bill-share-persons-selected">
+								<a href="#" class="bill-share-person">Tina</a>
+							</li>
+							<li class="bill-share-persons-selected">
+								<a href="#" class="bill-share-person">Niels</a>
+							</li>
+						</ul>
+
+					</div>
 
 
-    <div class="row">
-        <div class="col-md-6 well">
-            <h2>People</h2>
+					<div class="col-md-4 col-xs-12 pull-right">
+						<button type="submit" class="btn btn-block btn-primary btn-lg">Add bill</button>
+					</div>
 
-            <table class="table">
-                <tr>
-                    <th>I am</th>
-                    <th coolspan="2">Name</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td><span class="glyphicon glyphicon-star"></span></td>
-                    <td>Linus</td>
-                    <td><button type="button" class="close" aria-hidden="true">&times;</button></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" value="linus"></td>
-                    <td>Tina</td>
-                    <td><button type="button" class="close" aria-hidden="true">&times;</button></td>
-                </tr>
-            </table>
-        </div>
+				</div>
+			</form>
+		</div>
+	</div>    
 
-        <div class="col-md-6 well">
-            <h2>Summary</h2>
-        </div>
 
-    </div>    
+	<div class="row">
+		<div class="col-md-6">
+			<div class="well">
+				<h2>People</h2>
+
+				<table class="table">
+					<tr>
+						<th>I am</th>
+						<th coolspan="2">Name</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td><input type="checkbox" value="linus"></td>
+						<td>Linus</td>
+						<td><button type="button" class="close" aria-hidden="true">&times;</button></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" value="linus"></td>
+						<td>Tina</td>
+						<td><button type="button" class="close" aria-hidden="true">&times;</button></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" value="linus"></td>
+						<td>Niels</td>
+						<td><button type="button" class="close" aria-hidden="true">&times;</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="well">
+				<h2>Summary</h2>
+
+				<table class="table">
+					<tr>
+						<th>Name</th>
+						<th>Money</th>
+					</tr>
+					<tr>
+						<td>Linus</td>
+						<td>-100</td>
+					</tr>
+					<tr>
+						<td>Tina</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>Niels</td>
+						<td>50</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>    
 </div>
 
 {% endblock %}
